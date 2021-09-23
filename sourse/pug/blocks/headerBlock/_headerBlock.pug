@@ -52,7 +52,8 @@ mixin headerBlockCard(data)
 	.col-sm-6.col-lg-3
 		+e.card.card-js
 			+e.img-bl(href="https://www.youtube.com/watch?v=pYt0Nwt_oNI" data-fancybox=`video${data.imgNum}`)
-				img(loading="lazy" src=`img/@2x/sCards-${data.imgNum}.png` alt="")
+				+pic(`sCards-${data.imgNum}.png`)
+				//-img(loading="lazy" src=`img/@2x/sCards-${data.imgNum}.png` alt="")
 				+e.plate--views
 					span 45
 				+e.plate--length
