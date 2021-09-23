@@ -1,12 +1,55 @@
 .top-nav {
-	p{
-		@include ell();
+	padding: rem(16) 0;
+	@include media-breakpoint-up(lg){
+		padding: rem(32) 0;
 	}
 
-	&__{}
-	&__{}
+	&__row{
+		--bs-gutter-x: #{rem(20)};
+	}
+	&__logo{
+		@include media-breakpoint-up(xxl){
+			position: relative;
+			top: -4px;
+			margin-left: rem(10);
+		}
+		width: rem(177);
+		img{
+			width: auto;
+			max-width: 100%;
+		}
+	}
 	&__{}
 	&__{}
 }
 
+.h-link{
+	display: inline-flex;
+	align-items: center;
 
+	.icon{
+		font-size: rem(24);
+		margin-right: rem(10);
+		color: $primary;
+	}
+	&.mail{
+		.icon{
+			font-size: rem(20);
+		}
+	}
+
+	color: $body-color;
+	&:hover{
+		color: $primary;
+	}
+
+	font-size: rem(21);
+	line-height: calc(24/21);
+	@include media-breakpoint-up(xxl){
+		letter-spacing: rem(0.2);
+	}
+	span{
+
+	}
+
+}

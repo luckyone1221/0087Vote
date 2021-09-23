@@ -1,6 +1,4 @@
-
 $h: em(2);
-
 .toggle-menu-mobile {
 	display: block;
 	height: $h* 12;
@@ -96,7 +94,9 @@ $h: em(2);
 	will-change: transform;
 
 	&__inner {
-		padding: rem(20) 0;
+		padding: rem(20);
+		background-color: $white;
+
 		overflow-x: hidden;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
@@ -140,21 +140,32 @@ $h: em(2);
 		}
 	}
 
-	ul {
-		position: relative;
-	}
-
-	li {
+	&__logo{
+		width: rem(180);
 		display: block;
-		margin: 0;
-		border-top: 1px solid rgba(255, 255, 255, .13);
-
-		a {
-			// font-size: 16px;
-
-			padding: 10px;
-			display: block;
+		margin-bottom: rem(20);
+		img{
+			width: auto;
+			max-width: 100%;
+		}
+	}
+	.menu{
+		list-style: none;
+		padding: 0;
+		margin: 0 0 rem(30);
+		li{
+			margin-bottom: rem(4);
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		a{
 
 		}
+	}
+
+	.h-link{
+		display: flex;
+		margin-bottom: rem(12);
 	}
 }

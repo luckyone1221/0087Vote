@@ -1,18 +1,36 @@
 mixin modal()
 	//  start modals
-	+b.modal-win(id="modal-call" class=" " style="display: none" )
+	+b.modal-win(id="modal1" style="display: none")
 		+form-wrap
 			.text-center
-				+e.title.form-data.h3.ttu Обратный звонок
-				p.after-headline Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут
-			+input("Ваше Имя")(required)
-			+e.BUTTON.btn.btn(type="submit")
-			.p-5
-			.p-5
-			.p-5
-			.p-5
-			.p-5
-			+policy()
-	// #modal-call
-	
+				+e.title.h1 Заголовок
+			+e.inputs
+				+e.input-wrap
+					+e.INPUT.input.form-control(type="text" placeholder="Имя")
+				+e.input-wrap
+					+e.INPUT.input.form-control.border-danger(type="tel" placeholder="Телефон")
+					+e.message.text-danger Неправильно набран номер
+				+e.input-wrap
+					+e.INPUT.input.form-control(type="email" placeholder="Электронная почта")
+			+e.p-row.row.align-items-center
+				.col-auto
+					+in-c()(checked)
+						span.square
+				.col
+					+e.p-txt
+						| I agree to the
+						|
+						a(href="#") terms
+						|
+						| and conditions and the
+						|
+						a(href="#") privacy policy
+			.text-center
+				+e.BUTTON.btn.btn(type="submit") Подтвердить
+	// #modal1
+	+b.modal-thanks.modal-win.bg-success.text-white(id="modal-thanks" style="display: none")
+		+e.bg
+			img(loading="lazy" src="img/svg/success.svg" alt="")
+		+e.txt.text-center.h1 Полный сакцес!
+	// #modal-thanks
 	// end modals

@@ -3,8 +3,67 @@ mixin headerBlock()
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+				h1 Конкурс на лучший видеобзор узла ввода
+			+e.row.row
+				+headerBlockCard({
+					imgNum: 1,
+					likeNum: 13,
+					btnAddClasses: '',
+				})
+				+headerBlockCard({
+					imgNum: 2,
+					likeNum: 42,
+					btnAddClasses: '',
+				})
+				+headerBlockCard({
+					imgNum: 3,
+					likeNum: 75,
+					btnAddClasses: '',
+				})
+				+headerBlockCard({
+					imgNum: 4,
+					likeNum: 88,
+					btnAddClasses: 'muted',
+				})
+				+headerBlockCard({
+					imgNum: 5,
+					likeNum: 98,
+					btnAddClasses: 'muted',
+				})
+				+headerBlockCard({
+					imgNum: 6,
+					likeNum: 54,
+					btnAddClasses: 'muted',
+				})
+				+headerBlockCard({
+					imgNum: 7,
+					likeNum: 27,
+					btnAddClasses: 'muted',
+				})
+				+headerBlockCard({
+					imgNum: 8,
+					likeNum: 11,
+					btnAddClasses: 'muted',
+				})
+			+pugin()
 	// end headerBlock
+
+mixin headerBlockCard(data)
+	.col-sm-6.col-lg-3
+		+e.card.card-js
+			+e.img-bl(href="https://www.youtube.com/watch?v=pYt0Nwt_oNI" data-fancybox=`video${data.imgNum}`)
+				img(loading="lazy" src=`img/@2x/sCards-${data.imgNum}.png` alt="")
+				+e.plate--views
+					span 45
+				+e.plate--length
+					span 4:28
+			+e.content
+				+e.name(href="https://www.youtube.com/watch?v=pYt0Nwt_oNI" data-fancybox=`video-name${data.imgNum}`) Leon Thomas - The Creator Has a Master Plan (Official Audio)
+				+e.like
+					+e.like-icon
+						img(loading="lazy" src='img/svg/like.png' alt="")
+						img(loading="lazy" src='img/svg/like-white.svg' alt="")
+					+e.l-num.like-num-js=data.likeNum
+				+e.btn.vote-btn-js(type="button" class=`${data.btnAddClasses || ''}`)
+					span Проголосовать
+					span Спасибо за активность!

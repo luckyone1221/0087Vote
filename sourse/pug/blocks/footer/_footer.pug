@@ -1,8 +1,38 @@
 mixin footer()
 	+b.FOOTER.footer
 		.container
-			.row
-				.col
-				.col
-				.col
-				.col-auto
+			+e.logo(href="/")
+				img(loading="lazy" src="img/svg/logo.svg" alt="")
+			+e.row.row
+				+e.col.col-6.col-lg-3
+					+e.title--tt-none CLAGE GmbH
+					+e.content
+						p Pirolweg 1-5, 21337 Lüneburg, Germany
+						+e.links-box
+							a(href="tel:+49413189010") +49 4131 89010
+							a(href="mailto:info@clage.de") info@clage.de
+						+e.link(href='www.clage.com' target="_blank") www.clage.com
+				+e.col.col-6.col-lg-3
+					+e.title.mb-0 CLAGE-RUSSIA
+					+e.content
+						+e.gray
+							| Эксклюзивный поставщик
+							br
+							| на территории РФ
+						+e.links-box
+							a(href="tel:+74957418510") +7 (495) 741-85-10
+							a(href="tel:+74952900585") +7 (495) 290-05-85
+							a(href="mailto:info@clage-russia.ru") info@clage-russia.ru
+						+e.link(href='clage-russia.ru' target="_blank") clage-russia.ru
+				+e.col.col-6.col-lg-3
+					+e.title Присоедняйся
+					+soc()
+				+e.col.col-6.col-lg-3
+					+e.title Информация
+					+mnu()
+			+e.copyright
+				| Copyright ©
+				|
+				span.set-curr-year-js 2021
+				|
+				| CLAGE GmbH. All rights reserved.

@@ -3,17 +3,37 @@ mixin mob-mnu()
 		+b.toggle-menu-mobile--js
 			span
 		+e.inner
+			+e.logo(href="/")
+				img(loading="lazy" src="img/svg/logo.svg")
 			+mnu()
+			+topNavLink('tel:+74957418510', '+7 (495) 741-85-10', 'tell')
+			+topNavLink('tel:+74952900585', '+7 (495) 290-05-85', 'tell')
+			+topNavLink('mailto:info@clage-russia.ru', 'info@clage-russia.ru', 'mail')
+
 	//  мобильное меню
 
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			.row
+			+e.row.row.align-items-center
+				.col
+					+e.logo(href="/")
+						img(loading="lazy" src="img/svg/logo.svg" alt="")
+				.col-auto.d-none.d-lg-block
+					+topNavLink('tel:+74957418510', '+7 (495) 741-85-10', 'tell')
+				.col-auto.d-none.d-lg-block
+					+topNavLink('tel:+74952900585', '+7 (495) 290-05-85', 'tell')
+				.col.text-end.d-none.d-lg-block
+					+topNavLink('mailto:info@clage-russia.ru', 'info@clage-russia.ru', 'mail')
 				.col-auto.d-lg-none
 					+b.toggle-menu-mobile--js
 						span
-				.col.d-none.d-lg-block
+				//-.col.d-none.d-lg-block
 					+mnu()
 	// end top-nav
+
+mixin topNavLink(linkHref, txt, icon='tell')
+	+b.h-link(href=linkHref class=icon)
+		+icon(icon)
+		span=txt
