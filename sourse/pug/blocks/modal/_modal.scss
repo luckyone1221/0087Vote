@@ -1,0 +1,29 @@
+.modal-win {
+	width: 100%;
+	position: relative;
+	max-width: rem(500);
+
+
+	.modal-content {
+
+	}
+
+	.mfp-close {
+		color: $primary;
+		font-size: 40px;
+		font-weight: 100;
+	}
+}
+
+.modal-form {
+	position: relative;
+}
+
+//?
+//@include media-breakpoint-down(xs) {
+//	.fancybox__container {
+//		width: 100% !important;
+//		min-height: 100%;
+//		transform: none !important;
+//	}
+//}
